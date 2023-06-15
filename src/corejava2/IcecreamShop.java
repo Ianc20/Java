@@ -80,22 +80,25 @@ public class IcecreamShop {
                 default:
                     break;
             }
+            System.out.println("Icecream Shop");
+            System.out.println("item\tprice\tquantity\ttotal");
+            double sum = 0;
+            int qty = 0;
+            int i = 1;
+            for(String key : orders.keySet()){
+                String[] str = key.split(",");
+                double total = Integer.valueOf(str[1]) * orders.get(key);
+                System.out.println(i+". " +str[0]+"\t"+str[1] + "\t" + orders.get(key) + "\t" + total);
+                qty += orders.get(key);
+                sum += total;
+                i++;
+            }
+            System.out.println("total\t\t\t" + qty + "\t"+sum);
             System.out.println("Would you like continue order?(0 to exit)");
             cont = sc.nextInt();
 
         }while (cont != 0);
-        System.out.println("Icecream Shop");
-        System.out.println("item\tprice\tquantity\ttotal");
-        double sum = 0;
-        int qty = 0;
-        for(String key : orders.keySet()){
-            String[] str = key.split(",");
-            double total = Integer.valueOf(str[1]) * orders.get(key);
-            System.out.println(str[0]+"\t"+str[1] + "\t" + orders.get(key) + "\t" + total);
-            qty += orders.get(key);
-            sum += total;
-        }
-        System.out.println("total\t" + qty + "\t"+sum);
+        
         sc.close();
     }
 }
