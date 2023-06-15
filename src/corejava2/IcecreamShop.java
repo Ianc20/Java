@@ -80,8 +80,10 @@ public class IcecreamShop {
                 default:
                     break;
             }
+            System.out.println("===========================================================================================");
             System.out.println("Icecream Shop");
-            System.out.println("item\tprice\tquantity\ttotal");
+            System.out.println("-------------------------------------------------------------------------------------------");
+            System.out.println("NO.\titem\tprice\tquantity\ttotal");
             double sum = 0;
             int qty = 0;
             int i = 1;
@@ -93,7 +95,9 @@ public class IcecreamShop {
                 sum += total;
                 i++;
             }
-            System.out.println("total\t\t\t" + qty + "\t"+sum);
+            System.out.println("-------------------------------------------------------------------------------------------");
+            System.out.println("total\t\t\t\t" + qty + "\t"+sum);
+            System.out.println("===========================================================================================");
             System.out.println("Would you like continue order?(0 to exit)");
             cont = sc.nextInt();
 
