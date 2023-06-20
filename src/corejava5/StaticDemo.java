@@ -12,4 +12,8 @@ public class StaticDemo {
         System.out.println("static block");
         System.out.println("Product: " + num1 * num2);
     }
+
+    void sum(){
+        System.out.println("Sum: " + (num1 + num2));
+    }
 }
