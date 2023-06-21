@@ -3,13 +3,14 @@ package corejava6.taskAbstract;
 import java.util.Scanner;
 
 public class Laptops extends ElectronicShop {
-    final static String[] MACBOOKS = {"MacBook Pro,1100", "MacBook Air,950", "MacBook,800"};
-    final static String[] HP = {"HP Envy,1000", "HP Pavilion,900", "HP Spectre,700"};
-    final static String[] CHEAP = {"X1,100", "X2,200", "X3,300"};
+    final static String[] MACBOOKS = {"MacBook_Pro", "MacBook_Air", "MacBook\t"};
+    final static String[] HP = {"HP_Envy\t", "HP_Pavilion", "HP_Spectre"};
+    final static String[] CHEAP = {"X1\t", "X2\t", "X3\t"};
     final static String[][] LAPTOP = {MACBOOKS, HP, CHEAP};
+    final static int[][] LAPTOPPRICE = {{700,800,900}, {600,500,400}, {100,200,300}};
 
 
-    static void printMenu(int choice) {
+    void printMenu(int choice) {
         int index = 1;
         switch (choice) {
             case 1:
@@ -43,14 +44,11 @@ public class Laptops extends ElectronicShop {
         int brands = scanner.nextInt();
         printMenu(brands);
         int choice = scanner.nextInt();
-        String[] theOrder;
-        
-                
+        String item = LAPTOP[brands-1][choice - 1];
+        int price = LAPTOPPRICE[brands-1][choice - 1];
+        buyProduct(item, price);
+        ElectronicShop.price.put(item, price);       
     }
-
-    void putToShoppingCart(int brands, int choice) {
-        
-        
-    }
+    
 
 }
