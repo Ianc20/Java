@@ -1,4 +1,4 @@
-package corejava6.taskAbstract;
+package corejava6.taskAbstract210623;
 
 import java.util.Scanner;
 
